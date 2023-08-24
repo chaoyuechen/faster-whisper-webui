@@ -16,7 +16,7 @@ class FilenameCollectorPP(PostProcessor):
 
 def download_url(url: str, maxDuration: int = None, destinationDirectory: str = None, playlistItems: str = "1") -> List[str]: 
     try:
-        return _perform_download(url, maxDuration=maxDuration, outputTemplate=None, destinationDirectory=destinationDirectory, playlistItems=playlistItems)
+        return _perform_download(url, maxDuration=maxDuration, outputTemplate="%(id)s.%(ext)s", destinationDirectory=destinationDirectory, playlistItems=playlistItems)
     except yt_dlp.utils.DownloadError as e:
         # In case of an OS error, try again with a different output template
         if e.msg and e.msg.find("[Errno 36] File name too long") >= 0:
