@@ -7,3 +7,5 @@ json5
 torch
 torchaudio
 more_itertools
+pysrt
+translatepy
